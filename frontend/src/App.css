@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+fieldset {
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
