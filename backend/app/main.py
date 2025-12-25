@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.app.routes.predict import router as predict_router
-from backend.app.routes.health import router as health_router
+from app.routes.predict import router as predict_router
+from app.routes.health import router as health_router
 
 app = FastAPI(
     title="Bank Marketing Intelligence API",
@@ -10,16 +10,15 @@ app = FastAPI(
 )
 
 # =========================================================
-# CORS CONFIG (ABSOLUTELY REQUIRED FOR REACT)
+# CORS CONFIG (REQUIRED FOR REACT)
 # =========================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],   # Later restrict to Vercel URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # =========================================================
 # ROUTES

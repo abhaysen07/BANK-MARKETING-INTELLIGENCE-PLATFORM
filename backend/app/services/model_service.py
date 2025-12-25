@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 from datetime import datetime
 
-from backend.app.core.config import (
+from app.core.config import (
     MODELS_DIR,
     FEATURE_COLUMNS_PATH,
     DEFAULT_MODEL_PATH

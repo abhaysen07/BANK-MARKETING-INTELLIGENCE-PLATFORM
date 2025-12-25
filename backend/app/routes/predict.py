@@ -1,13 +1,14 @@
 from fastapi import APIRouter, HTTPException
-from backend.app.schemas.customer import CustomerInput
-from backend.app.services.model_service import predict_customer # type: ignore
+
+from app.schemas.customer import CustomerInput
+from app.services.model_service import predict_customer
 
 router = APIRouter()
 
 @router.post("/predict")
-def predict(data: CustomerInput): # pyright: ignore[reportUnknownParameterType]
+def predict(data: CustomerInput):
     try:
-        return predict_customer(data.dict()) # pyright: ignore[reportDeprecated, reportUnknownVariableType]
+        return predict_customer(data.model_dump())
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception:
