@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import NumericFields from "./components/NumericField";
+import NumericFields from "./components/NumericFields";
 import BinaryFields from "./components/BinaryFields";
 import CategoricalFields from "./components/CategoricalFields";
 import SubmitButton from "./components/SubmitButton";
@@ -52,7 +52,7 @@ export default function App() {
       <Header />
 
       <form onSubmit={handleSubmit}>
-        <NumericFields formData={formData} setFormData={setFormData} />
+        <NumericField formData={formData} setFormData={setFormData} />
         <BinaryFields formData={formData} setFormData={setFormData} />
         <CategoricalFields formData={formData} setFormData={setFormData} />
         <SubmitButton loading={loading} />
