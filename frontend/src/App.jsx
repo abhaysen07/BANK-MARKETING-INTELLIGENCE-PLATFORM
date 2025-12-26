@@ -5,7 +5,8 @@ import BinaryFields from "./components/BinaryFields";
 import CategoricalFields from "./components/CategoricalFields";
 import SubmitButton from "./components/SubmitButton";
 import ResultCard from "./components/ResultCard";
-import { predictCustomer } from "./Services/api";
+import { predictCustomer } from "./services/api";
+
 import "./App.css";
 
 export default function App() {
