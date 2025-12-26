@@ -1,10 +1,12 @@
 import { useState } from "react";
+
 import Header from "./components/Header";
-import NumericField from "./components/NumericFields";
+import NumericFields from "./components/NumericFields";
 import BinaryFields from "./components/BinaryFields";
 import CategoricalFields from "./components/CategoricalFields";
 import SubmitButton from "./components/SubmitButton";
 import ResultCard from "./components/ResultCard";
+
 import { predictCustomer } from "./services/api";
 
 import "./App.css";
@@ -39,10 +41,10 @@ export default function App() {
     setError(null);
 
     try {
-      const res = await predictCustomer(formData);
-      setResult(res);
+      const response = await predictCustomer(formData);
+      setResult(response);
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Prediction failed");
     } finally {
       setLoading(false);
     }
@@ -53,7 +55,7 @@ export default function App() {
       <Header />
 
       <form onSubmit={handleSubmit}>
-        <NumericField formData={formData} setFormData={setFormData} />
+        <NumericFields formData={formData} setFormData={setFormData} />
         <BinaryFields formData={formData} setFormData={setFormData} />
         <CategoricalFields formData={formData} setFormData={setFormData} />
         <SubmitButton loading={loading} />
