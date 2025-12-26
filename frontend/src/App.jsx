@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import NumericFields from "./components/NumericFields";
+import NumericField from "./components/NumericFields";
 import BinaryFields from "./components/BinaryFields";
 import CategoricalFields from "./components/CategoricalFields";
 import SubmitButton from "./components/SubmitButton";
