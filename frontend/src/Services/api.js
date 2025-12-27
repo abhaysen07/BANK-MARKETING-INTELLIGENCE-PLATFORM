@@ -8,7 +8,8 @@ export async function predictCustomer(payload) {
   });
 
   if (!response.ok) {
-    throw new Error("Prediction failed");
+    const err = await response.json();
+    throw new Error(err.detail || "Prediction failed");
   }
 
   return response.json();

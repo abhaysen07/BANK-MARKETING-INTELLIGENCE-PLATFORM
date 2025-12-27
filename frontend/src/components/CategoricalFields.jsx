@@ -1,5 +1,3 @@
-// src/components/CategoricalFields.jsx
-
 export default function CategoricalFields({ formData, setFormData }) {
   const options = {
     job: [
